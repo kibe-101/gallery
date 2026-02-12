@@ -1,0 +1,107 @@
+Build a high-end, futuristic, cinematic website for a creative studio called Estate Aerial Co.
+
+The site should be inspired by https://activetheory.net and modern 3D glass UI using Spline.
+
+The visual identity must feel:
+- Ultra-minimal
+- Cinematic
+- Editorial
+- Luxury
+- Dark and futuristic
+- High-contrast
+- Spacious
+- Premium tech
+
+TECH STACK:
+- React (or Next.js)
+- Tailwind CSS
+- Framer Motion
+- Lenis or Locomotive Scroll
+- Spline (for 3D scenes)
+
+CORE DESIGN SYSTEM:
+- Background: deep black / charcoal
+- Text: white and soft gray
+- Accents: subtle silver and glass highlights
+- UI: glassmorphism + liquid glass
+- Buttons: frosted glass, blur, glow, chromatic light, ripple hover
+- Typography: thin modern editorial fonts
+- Layout: large margins, grid, white space
+
+3D & SPLINE:
+Use Spline Community assets to create a 3D glass frame slider for the gallery.
+Each photo appears inside a floating glass frame.
+Frames rotate slightly in 3D.
+Parallax follows the cursor.
+Light reflects and refracts through the glass.
+Horizontal sliding gallery.
+
+SITE STRUCTURE:
+
+HOMEPAGE
+- Fullscreen cinematic hero
+- Background: drone footage or architecture video
+- Big typography
+- Minimal navigation: Home, Work, About, Services, Contact
+- Liquid glass CTA: “View Our Work”
+
+ABOUT (use this exact content)
+Estate Aerial Co. creates visual content that transcends traditional property documentation. We specialize in capturing architecture, interiors, and design through a cinematic lens, combining aerial perspectives, immersive 360° experiences, and refined photography to tell compelling spatial stories.
+
+Our work goes beyond the structure. We're drawn to the details, textures, patterns, colors, and the subtle interplay of light that defines a space. We capture not just what a place looks like, but how it feels, translating atmosphere and emotion into every frame.
+
+From construction documentation to marketing luxury spaces, we deliver imagery that resonates with discerning audiences. Our approach is rooted in storytelling: every frame is composed to highlight detail, context, and atmosphere.
+
+We work with architects, designers, developers, and property owners who understand that exceptional spaces deserve exceptional documentation.
+
+SERVICES (three glassmorphic cards)
+
+Drone Cinematography
+Elevated perspectives that reveal context, scale, and surroundings. Our drone videography captures dynamic aerial footage and stills that showcase properties from angles traditional photography cannot — ideal for site documentation, marketing luxury developments, and cinematic property narratives.
+
+Immersive 360° Experiences
+Interactive virtual tours that allow audiences to explore spaces remotely. Perfect for pre-construction marketing, hospitality venues, and high-end residential properties.
+
+Photography & Film
+Cinematic documentation of architecture, interiors, and design details. Thoughtful composition, refined lighting, and storytelling for portfolios, marketing, and editorial use.
+
+GALLERY / WORK
+Spline-powered 3D slider
+Glass photo frames
+Parallax movement
+Click opens fullscreen cinematic preview
+
+CONTACT
+Glassmorphic form
+Fields: Name, Email, Message
+Liquid glass button: “Request a Quote”
+
+MOTION
+Framer Motion page transitions
+Smooth scrolling
+Fade-in on scroll
+Parallax on imagery
+Cursor-driven Spline movement
+
+FOOTER
+Left:
+Estate Aerial Co.
+Cinematic documentation for exceptional spaces
+
+Center:
+Home
+Work
+About
+Services
+Contact
+
+Right:
+Instagram
+LinkedIn
+Vimeo
+
+Bottom:
+Thin divider line
+© Estate Aerial Co. All rights reserved.
+
+The final site must feel like a luxury architectural studio, a cinematic digital experience, and a futuristic creative brand — similar emotional impact to Active Theory but branded for Estate Aerial Co.
