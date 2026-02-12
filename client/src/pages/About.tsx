@@ -1,5 +1,6 @@
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -31,7 +32,7 @@ export default function About() {
                 transition={{ delay: 0.5 }}
                 className="font-mono text-xs uppercase tracking-[0.2em] text-white/40 mb-8"
               >
-                About The Studio
+                Estate Aerial Co.
               </motion.span>
               
               <motion.h1 
@@ -40,9 +41,9 @@ export default function About() {
                 transition={{ delay: 0.7, duration: 0.8 }}
                 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9] text-white mb-12"
               >
-                WE CRAFT <br />
-                <span className="text-white/30">CINEMATIC</span> <br />
-                REALITIES.
+                CAPTURING <br />
+                <span className="text-white/30">SPATIAL</span> <br />
+                STORIES.
               </motion.h1>
 
               <motion.div 
@@ -52,13 +53,16 @@ export default function About() {
                 className="space-y-8 text-white/60 font-light leading-relaxed text-lg"
               >
                 <p>
-                  Aether Studio operates at the intersection of technology and art. We are a collective of cinematographers, drone pilots, and 3D artists dedicated to capturing the world from impossible angles.
+                  Estate Aerial Co. creates visual content that transcends traditional property documentation. We specialize in capturing architecture, interiors, and design through a cinematic lens, combining aerial perspectives, immersive 360° experiences, and refined photography to tell compelling spatial stories.
                 </p>
                 <p>
-                  Through a cinematic lens, we explore textures, patterns, and light. Our work is not just documentation; it is an interpretation of space and structure. We believe that every environment has a rhythm, and our mission is to visualize it.
+                  Our work goes beyond the structure. We're drawn to the details, textures, patterns, colors, and the subtle interplay of light that defines a space. We capture not just what a place looks like, but how it feels, translating atmosphere and emotion into every frame.
                 </p>
                 <p>
-                  Specializing in architectural visualization, immersive 360° experiences, and high-end drone cinematography, we deliver visuals that feel futuristic, technical, and undeniably human.
+                  From construction documentation to marketing luxury spaces, we deliver imagery that resonates with discerning audiences. Our approach is rooted in storytelling: every frame is composed to highlight detail, context, and atmosphere.
+                </p>
+                <p>
+                  We work with architects, designers, developers, and property owners who understand that exceptional spaces deserve exceptional documentation.
                 </p>
               </motion.div>
 
@@ -76,6 +80,7 @@ export default function About() {
 
           </div>
         </div>
+        <Footer />
       </div>
     </ReactLenis>
   );

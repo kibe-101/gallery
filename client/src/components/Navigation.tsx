@@ -21,7 +21,7 @@ export function Navigation() {
     >
       <Link href="/">
         <a className="text-xl font-bold tracking-tighter uppercase font-display cursor-pointer select-none">
-          Aether<span className="opacity-50">.Studio</span>
+          Estate Aerial<span className="opacity-50"> Co.</span>
         </a>
       </Link>
 
@@ -29,7 +29,7 @@ export function Navigation() {
         {links.map((link) => (
           <Link key={link.href} href={link.href}>
             <a className={cn(
-              "text-sm uppercase tracking-widest font-mono transition-colors hover:text-white/80 relative group",
+              "text-sm uppercase tracking-widest font-mono transition-colors hover:text-white/80 relative group cursor-pointer",
               location === link.href ? "text-white" : "text-white/60"
             )}>
               {link.label}

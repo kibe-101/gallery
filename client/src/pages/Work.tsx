@@ -1,5 +1,6 @@
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
 import { useProjects } from "@/hooks/use-projects";
 import { motion } from "framer-motion";
@@ -60,6 +61,7 @@ export default function Work() {
             )}
           </div>
         </div>
+        <Footer />
       </div>
     </ReactLenis>
   );

@@ -1,11 +1,13 @@
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Video, Camera, Box, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { GlassButton } from "@/components/GlassButton";
 import { SectionHeading } from "@/components/SectionHeading";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -51,7 +53,7 @@ export default function Home() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter text-white leading-[0.85] mb-8 mix-blend-overlay"
             >
-              FUTURE <br /> VISIONS
+              ESTATE <br /> AERIAL
             </motion.h1>
 
             <motion.p
@@ -60,7 +62,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.5 }}
               className="font-mono text-sm md:text-base text-white/70 max-w-md uppercase tracking-widest mb-12"
             >
-              Cinematic Reality Capture & Digital Environments
+              Cinematic Documentation for Exceptional Spaces
             </motion.p>
 
             <motion.div
@@ -127,16 +129,16 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
               {/* Project 1 */}
               <WorkCard 
-                image="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=2073&auto=format&fit=crop"
-                title="The Glass House"
-                category="Architecture"
+                image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80"
+                title="Azure Heights"
+                category="Drone Cinematography"
                 index={0}
               />
               {/* Project 2 */}
               <WorkCard 
-                image="https://images.unsplash.com/photo-1486739985386-d4fae04ca6f7?q=80&w=2072&auto=format&fit=crop"
-                title="Urban Pulse"
-                category="Drone"
+                image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
+                title="The Monolith"
+                category="Photography"
                 index={1}
                 className="md:mt-32"
               />
@@ -149,9 +151,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/[0.02]" />
           <SectionHeading title="Ready to Create?" align="center" />
           <Link href="/contact">
-            <GlassButton className="mt-8">Start a Project</GlassButton>
+            <GlassButton className="mt-8">Request a Quote</GlassButton>
           </Link>
         </section>
+
+        <Footer />
 
       </div>
     </ReactLenis>
@@ -183,16 +187,19 @@ function WorkCard({ image, title, category, index, className }: { image: string,
       transition={{ delay: index * 0.2, duration: 0.8 }}
       className={cn("group cursor-pointer", className)}
     >
-      <div className="overflow-hidden mb-6 aspect-[4/5] md:aspect-[3/4]">
+      <div className="overflow-hidden mb-6 aspect-[4/5] md:aspect-[3/4] relative">
+        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white border border-white/20 px-4 py-2 bg-black/40 backdrop-blur-md">View Case</span>
+        </div>
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+          className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
         />
       </div>
       <div className="flex justify-between items-baseline border-b border-white/10 pb-4 group-hover:border-white/40 transition-colors">
-        <h3 className="font-display text-2xl md:text-3xl text-white">{title}</h3>
-        <span className="font-mono text-xs uppercase tracking-widest text-white/40">{category}</span>
+        <h3 className="font-display text-2xl md:text-3xl text-white tracking-tighter uppercase">{title}</h3>
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">{category}</span>
       </div>
     </motion.div>
   );

@@ -1,5 +1,6 @@
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
 import { GlassButton } from "@/components/GlassButton";
 import { useForm } from "react-hook-form";
@@ -82,9 +83,9 @@ export default function Contact() {
                         <FormLabel className="font-mono text-xs uppercase tracking-widest text-white/40">Name</FormLabel>
                         <FormControl>
                           <Input 
-                            placeholder="John Doe" 
+                            placeholder="Your Name" 
                             {...field} 
-                            className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-white/30 h-12 font-light"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-white/30 h-12 font-light rounded-none"
                           />
                         </FormControl>
                         <FormMessage />
@@ -100,9 +101,9 @@ export default function Contact() {
                         <FormLabel className="font-mono text-xs uppercase tracking-widest text-white/40">Email</FormLabel>
                         <FormControl>
                           <Input 
-                            placeholder="john@example.com" 
+                            placeholder="email@example.com" 
                             {...field} 
-                            className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-white/30 h-12 font-light"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-white/30 h-12 font-light rounded-none"
                           />
                         </FormControl>
                         <FormMessage />
@@ -118,9 +119,9 @@ export default function Contact() {
                         <FormLabel className="font-mono text-xs uppercase tracking-widest text-white/40">Message</FormLabel>
                         <FormControl>
                           <Textarea 
-                            placeholder="Tell us about your project..." 
+                            placeholder="How can we help?" 
                             {...field} 
-                            className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-white/30 min-h-[150px] font-light resize-none"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-white/30 min-h-[150px] font-light resize-none rounded-none"
                           />
                         </FormControl>
                         <FormMessage />
@@ -133,7 +134,7 @@ export default function Contact() {
                     className="w-full"
                     disabled={createInquiry.isPending}
                   >
-                    {createInquiry.isPending ? "Sending..." : "Send Message"}
+                    {createInquiry.isPending ? "Processing..." : "Request a Quote"}
                   </GlassButton>
                 </form>
               </Form>
@@ -141,6 +142,7 @@ export default function Contact() {
           </motion.div>
 
         </div>
+        <Footer />
       </div>
     </ReactLenis>
   );
