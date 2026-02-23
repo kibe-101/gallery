@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,21 +13,16 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Gallery from "@/pages/Gallery";
 
-// Base path for GitHub Pages deployment
-const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "") || "";
-
-function AppRouter() {
+function Router() {
   return (
-    <WouterRouter base={BASE_PATH}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/work" component={Work} />
-        <Route path="/gallery" component={Gallery} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-    </WouterRouter>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/work" component={Work} />
+      <Route path="/gallery" component={Gallery} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
@@ -60,7 +55,7 @@ function App() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <Toaster />
-          <AppRouter />
+          <Router />
         </motion.div>
       </TooltipProvider>
     </QueryClientProvider>

@@ -26,13 +26,13 @@ export default function Home() {
 
         {/* HERO SECTION */}
         <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-          <motion.div 
+          <motion.div
             style={{ y: heroY, opacity: heroOpacity }}
             className="absolute inset-0 z-0"
           >
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/40 z-10" />
-            
+
             {/* Cinematic architectural video background */}
             <video
               autoPlay
@@ -41,7 +41,7 @@ export default function Home() {
               playsInline
               className="w-full h-full object-cover opacity-60 grayscale-[30%] scale-105"
             >
-               {/* Drone footage of modern architecture */}
+              {/* Drone footage of modern architecture */}
               <source src="https://player.vimeo.com/external/371836774.sd.mp4?s=d9406450682829b351897d25377f374775d78a87&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
             </video>
           </motion.div>
@@ -78,7 +78,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
@@ -91,21 +91,21 @@ export default function Home() {
         {/* SERVICES SECTION */}
         <section className="py-32 px-6 container mx-auto">
           <SectionHeading title="Our Expertise" subtitle="Services" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ServiceCard 
+            <ServiceCard
               icon={<Video className="w-8 h-8" />}
               title="Drone Cinematography"
               description="High-altitude 6K capture for architectural visualization and cinematic productions."
               index={0}
             />
-            <ServiceCard 
+            <ServiceCard
               icon={<Box className="w-8 h-8" />}
               title="Immersive 360°"
               description="Interactive VR experiences and digital twin generation for remote presence."
               index={1}
             />
-            <ServiceCard 
+            <ServiceCard
               icon={<Camera className="w-8 h-8" />}
               title="Photography & Film"
               description="Editorial grade photography with a focus on light, texture, and composition."
@@ -128,14 +128,14 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
               {/* Project 1 */}
-              <WorkCard 
+              <WorkCard
                 image="/IMG_4794.jpg"
                 title="Azure Heights"
                 category="Drone Cinematography"
                 index={0}
               />
               {/* Project 2 */}
-              <WorkCard 
+              <WorkCard
                 image="/IMG_7503.jpg"
                 title="The Monolith"
                 category="Photography"
@@ -169,7 +169,7 @@ function ServiceCard({ icon, title, description, index }: { icon: any, title: st
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.2, duration: 0.6 }}
-      whileHover={{ 
+      whileHover={{
         y: -12,
         scale: 1.03,
         rotateX: 5,
@@ -181,19 +181,19 @@ function ServiceCard({ icon, title, description, index }: { icon: any, title: st
     >
       {/* Subtle animated shadow */}
       <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/15 via-purple-500/10 to-pink-500/15 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-      
+
       {/* 3D-like frame with depth */}
       <div className="relative p-8 rounded-3xl border border-white/10 hover:border-white/25 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm transition-all duration-500 hover:bg-gradient-to-br hover:from-white/[0.06] hover:to-white/[0.02] hover:shadow-2xl hover:shadow-black/20">
         {/* Inner 3D border effect */}
         <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Top highlight for 3D effect */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Side shadows for depth */}
         <div className="absolute inset-y-0 -left-px w-px bg-gradient-to-b from-transparent via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-black/20 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         <div className="relative z-10">
           <div className="mb-6 text-white/60 group-hover:text-white transition-all duration-300 group-hover:scale-105 transform">{icon}</div>
           <h3 className="font-display text-2xl font-semibold mb-4 text-white group-hover:text-white/95 transition-colors">{title}</h3>
@@ -217,9 +217,9 @@ function WorkCard({ image, title, category, index, className }: { image: string,
         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-center justify-center">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white border border-white/20 px-4 py-2 bg-black/40 backdrop-blur-md">View Case</span>
         </div>
-        <img 
-          src={image} 
-          alt={title} 
+        <img
+          src={image}
+          alt={title}
           className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
         />
       </div>

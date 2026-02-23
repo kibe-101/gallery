@@ -47,10 +47,10 @@ export default function Work() {
     <ReactLenis root>
       <div className="bg-background min-h-screen text-foreground">
         <Navigation />
-        
+
         <div className="pt-40 pb-20 container mx-auto px-6">
           <SectionHeading title="Selected Works" subtitle="Archive 2024-2025" />
-          
+
           <div className="flex flex-col gap-24 md:gap-40">
             {isLoading ? (
               <div className="text-white/30 font-mono animate-pulse">Loading archive...</div>
@@ -71,7 +71,7 @@ function ProjectItem({ project, index }: { project: any, index: number }) {
   const isEven = index % 2 === 0;
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -80,9 +80,9 @@ function ProjectItem({ project, index }: { project: any, index: number }) {
     >
       <div className="w-full md:w-2/3 overflow-hidden relative aspect-video">
         <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-        <img 
-          src={project.imageUrl} 
-          alt={project.title} 
+        <img
+          src={project.imageUrl}
+          alt={project.title}
           className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
         />
       </div>
@@ -93,9 +93,9 @@ function ProjectItem({ project, index }: { project: any, index: number }) {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h2>
           <p className="text-white/50 leading-relaxed font-light">{project.description}</p>
         </div>
-        
+
         <button className="flex items-center gap-2 text-sm font-mono uppercase tracking-widest text-white/80 hover:text-white transition-colors group/btn">
-          View Case Study 
+          View Case Study
           <ArrowUpRight className="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
         </button>
       </div>

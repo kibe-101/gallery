@@ -172,13 +172,13 @@ export default function Gallery() {
                   {/* 3D Frame effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   <img
                     src={galleryImages[currentIndex].url}
                     alt={galleryImages[currentIndex].title}
                     className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
                   />
-                  
+
                   {/* Overlay with info */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -218,7 +218,7 @@ export default function Gallery() {
               {/* Gradient fade edges */}
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black/50 to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black/50 to-transparent z-10 pointer-events-none" />
-              
+
               <div className="flex gap-3 overflow-x-auto pb-6 px-4 scrollbar-hide">
                 {galleryImages.map((image, index) => (
                   <motion.button
@@ -235,7 +235,7 @@ export default function Gallery() {
                   >
                     {/* Image overlay effects */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
+
                     {/* Active indicator */}
                     {index === currentIndex && (
                       <motion.div
@@ -244,13 +244,13 @@ export default function Gallery() {
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
-                    
+
                     <img
                       src={image.url}
                       alt={image.title}
                       className="w-full h-full object-cover transform transition-transform duration-200 group-hover:scale-110"
                     />
-                    
+
                     {/* Image number badge */}
                     <div className="absolute top-2 left-2 w-6 h-6 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-[10px] text-white font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {index + 1}
@@ -258,7 +258,7 @@ export default function Gallery() {
                   </motion.button>
                 ))}
               </div>
-              
+
               {/* Navigation dots below thumbnails */}
               <div className="flex justify-center gap-2 mt-4">
                 {galleryImages.map((_, index) => (
