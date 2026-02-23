@@ -87,13 +87,13 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
             className="relative h-full flex items-center justify-center"
           >
             {/* Center content container */}
-            <div className="relative z-10 text-center">
-              {/* Liquid glass card */}
+            <div className="relative z-10 text-center px-4">
+              {/* Liquid glass card - mobile responsive */}
               <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="px-16 py-12 rounded-3xl backdrop-blur-2xl bg-white/[0.08] border border-white/20 shadow-2xl shadow-black/40 relative overflow-hidden"
+                className="px-6 py-8 md:px-16 md:py-12 rounded-2xl md:rounded-3xl backdrop-blur-2xl bg-white/[0.08] border border-white/20 shadow-2xl shadow-black/40 relative overflow-hidden max-w-sm mx-auto md:max-w-none"
               >
                 {/* Animated border glow */}
                 <motion.div
@@ -113,24 +113,24 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
                 />
                 
                 {/* Subtle glow */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-40" />
+                <div className="absolute inset-0 rounded-2xl md:rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-40" />
                 
                 <div className="relative z-10">
-                  {/* Company name with better typography */}
+                  {/* Company name with responsive typography */}
                   <motion.h1
                     initial={{ opacity: 0, filter: "blur(10px)", letterSpacing: "0.5em" }}
                     animate={{ opacity: 1, filter: "blur(0px)", letterSpacing: "0.2em" }}
                     transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-5xl md:text-6xl font-thin tracking-[0.2em] text-white mb-6 font-display"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thin tracking-[0.15em] md:tracking-[0.2em] text-white mb-4 md:mb-6 font-display leading-tight"
                   >
-                    ESTATE AERIAL
+                    ESTATE<br className="md:hidden" />AERIAL
                   </motion.h1>
                   
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.2 }}
-                    className="text-sm text-white/60 font-mono uppercase tracking-widest mb-2"
+                    className="text-xs sm:text-sm md:text-sm text-white/60 font-mono uppercase tracking-widest mb-2"
                   >
                     CO.
                   </motion.div>
@@ -140,14 +140,14 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.6 }}
-                    className="text-sm text-white/50 font-mono uppercase tracking-widest mb-10 mt-4"
+                    className="text-xs sm:text-sm md:text-sm text-white/50 font-mono uppercase tracking-widest mb-6 md:mb-10 mt-4"
                   >
                     Initializing visual systems…
                   </motion.p>
 
-                  {/* Enhanced cinematic scan bar */}
-                  <div className="mb-8">
-                    <div className="relative w-[320px] h-[2px] mx-auto bg-white/10 rounded-full overflow-hidden">
+                  {/* Enhanced cinematic scan bar - mobile responsive */}
+                  <div className="mb-6 md:mb-8">
+                    <div className="relative w-[200px] sm:w-[260px] md:w-[320px] h-[2px] mx-auto bg-white/10 rounded-full overflow-hidden">
                       {/* Ambient glow */}
                       <motion.div
                         animate={{
@@ -163,14 +163,14 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
                       
                       {/* Scanning bar */}
                       <motion.div
-                        initial={{ x: -320 }}
-                        animate={{ x: 320 }}
+                        initial={{ x: -200 }}
+                        animate={{ x: 200 }}
                         transition={{
                           duration: 2.5,
                           repeat: Infinity,
                           ease: "easeInOut"
                         }}
-                        className="absolute top-0 left-0 w-[80px] h-full bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
+                        className="absolute top-0 left-0 w-[60px] sm:w-[70px] md:w-[80px] h-full bg-gradient-to-r from-transparent via-white to-transparent rounded-full"
                       >
                         {/* Bright center with glow */}
                         <div className="absolute inset-0 bg-white shadow-lg shadow-white/80 blur-sm" />
@@ -179,14 +179,14 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
                     </div>
                   </div>
 
-                  {/* Enhanced status message */}
+                  {/* Enhanced status message - mobile responsive */}
                   <motion.div
                     key={currentStatusIndex}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.4 }}
-                    className="text-xs text-white/40 font-mono uppercase tracking-widest"
+                    className="text-xs sm:text-xs md:text-xs text-white/40 font-mono uppercase tracking-widest px-2"
                   >
                     {statusMessages[currentStatusIndex]}
                   </motion.div>
@@ -194,7 +194,7 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
               </motion.div>
             </div>
 
-            {/* Focus lock reticle */}
+            {/* Focus lock reticle - mobile responsive */}
             <AnimatePresence>
               {showReticle && (
                 <motion.div
@@ -212,7 +212,7 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
                       animate={{ scale: 1, opacity: 0.6 }}
                       exit={{ scale: 0.8, opacity: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="absolute inset-0 w-24 h-24 border border-white/30 rounded-full"
+                      className="absolute inset-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border border-white/30 rounded-full"
                     />
                     
                     {/* Inner ring */}
@@ -221,7 +221,7 @@ export function LoadingOverlay({ isLoading, onLoadingComplete }: LoadingOverlayP
                       animate={{ scale: 1, opacity: 0.8 }}
                       exit={{ scale: 0.9, opacity: 0 }}
                       transition={{ duration: 0.4, delay: 0.1 }}
-                      className="absolute inset-0 w-16 h-16 border border-white/50 rounded-full"
+                      className="absolute inset-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 border border-white/50 rounded-full"
                     />
                     
                     {/* Center dot */}
