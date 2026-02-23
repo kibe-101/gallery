@@ -19,6 +19,7 @@ export default defineConfig({
         ]
       : []),
   ],
+  base: process.env.NODE_ENV === "production" ? "/gallery/" : "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
