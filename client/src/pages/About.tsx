@@ -19,9 +19,10 @@ export default function About() {
             >
                {/* Minimal architecture detail */}
               <img 
-                src="https://pixabay.com/get/g0c3a9faf93223a9b59a334b2ddded09de200a6c0c63a0f9bd1fbc070cf22ceb9d67b2b4208779a7862f88b07cf0f0868833bf37e52696c82dbb4729c986b840e_1280.jpg" 
-                alt="Studio Atmosphere" 
+                src="/IMG_0773.jpg" 
+                alt="Estate Aerial Architecture" 
                 className="w-full h-[80vh] object-cover grayscale opacity-80"
+                loading="lazy"
               />
             </motion.div>
 
