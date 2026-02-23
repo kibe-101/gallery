@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertInquirySchema, insertProjectSchema, inquiries, projects } from './schema';
+import { insertInquirySchema, insertProjectSchema, inquiries, projects, type InsertInquiry } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -52,3 +52,5 @@ export function buildUrl(path: string, params?: Record<string, string | number>)
   }
   return url;
 }
+
+export type { InsertInquiry };

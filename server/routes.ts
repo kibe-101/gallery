@@ -52,28 +52,28 @@ async function seedDatabase() {
         title: "Azure Heights",
         category: "Drone Cinematography",
         description: "A cinematic aerial tour of a coastal luxury development, capturing the interplay of ocean light and modern architecture.",
-        imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80",
+        imageUrl: "/IMG_4794.jpg",
         videoUrl: null
       },
       {
         title: "The Glass Monolith",
         category: "Photography",
         description: "High-contrast architectural photography of a downtown skyscraper, focusing on reflections and geometric patterns.",
-        imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80",
+        imageUrl: "/IMG_7503.jpg",
         videoUrl: null
       },
       {
-        title: "Serenity Villa",
+        title: "Crystal Waters",
         category: "Immersive 360",
-        description: "An interactive virtual tour of a brutalist concrete villa nestled in the forest.",
-        imageUrl: "https://images.unsplash.com/photo-1600596542815-2a4d9f0152ba?auto=format&fit=crop&q=80",
+        description: "An interactive virtual tour of a modern lakeside property with panoramic views.",
+        imageUrl: "/IMG_0220.jpg",
         videoUrl: null
       },
       {
-        title: "Urban Pulse",
+        title: "City Lights",
         category: "Drone Cinematography",
-        description: "Nighttime aerials of the city skyline, showcasing the energy and flow of urban life.",
-        imageUrl: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80",
+        description: "Evening aerials capturing the vibrant energy of the metropolitan downtown.",
+        imageUrl: "/IMG_0237.jpg",
         videoUrl: null
       }
     ];

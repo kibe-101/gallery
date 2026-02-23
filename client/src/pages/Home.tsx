@@ -53,7 +53,7 @@ export default function Home() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter text-white leading-[0.85] mb-8 mix-blend-overlay"
             >
-              ESTATE <br /> AERIAL
+              ESTATE AERIAL <br /> CO.
             </motion.h1>
 
             <motion.p
@@ -129,14 +129,14 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
               {/* Project 1 */}
               <WorkCard 
-                image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80"
+                image="/IMG_4794.jpg"
                 title="Azure Heights"
                 category="Drone Cinematography"
                 index={0}
               />
               {/* Project 2 */}
               <WorkCard 
-                image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
+                image="/IMG_7503.jpg"
                 title="The Monolith"
                 category="Photography"
                 index={1}
@@ -169,11 +169,37 @@ function ServiceCard({ icon, title, description, index }: { icon: any, title: st
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.2, duration: 0.6 }}
-      className="group p-8 border border-white/5 hover:border-white/20 bg-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:bg-white/[0.04]"
+      whileHover={{ 
+        y: -12,
+        scale: 1.03,
+        rotateX: 5,
+        rotateY: -5,
+        z: 50,
+      }}
+      style={{ transformStyle: 'preserve-3d' }}
+      className="group relative"
     >
-      <div className="mb-6 text-white/60 group-hover:text-white transition-colors">{icon}</div>
-      <h3 className="font-display text-2xl font-semibold mb-4 text-white">{title}</h3>
-      <p className="text-white/40 leading-relaxed font-light">{description}</p>
+      {/* Subtle animated shadow */}
+      <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/15 via-purple-500/10 to-pink-500/15 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+      
+      {/* 3D-like frame with depth */}
+      <div className="relative p-8 rounded-3xl border border-white/10 hover:border-white/25 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm transition-all duration-500 hover:bg-gradient-to-br hover:from-white/[0.06] hover:to-white/[0.02] hover:shadow-2xl hover:shadow-black/20">
+        {/* Inner 3D border effect */}
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        {/* Top highlight for 3D effect */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        {/* Side shadows for depth */}
+        <div className="absolute inset-y-0 -left-px w-px bg-gradient-to-b from-transparent via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-black/20 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        <div className="relative z-10">
+          <div className="mb-6 text-white/60 group-hover:text-white transition-all duration-300 group-hover:scale-105 transform">{icon}</div>
+          <h3 className="font-display text-2xl font-semibold mb-4 text-white group-hover:text-white/95 transition-colors">{title}</h3>
+          <p className="text-white/40 leading-relaxed font-light group-hover:text-white/70 transition-colors duration-300">{description}</p>
+        </div>
+      </div>
     </motion.div>
   );
 }

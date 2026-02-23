@@ -1,13 +1,9 @@
-import { db } from "./db";
 import {
-  inquiries,
-  projects,
   type InsertInquiry,
   type Inquiry,
   type InsertProject,
   type Project
 } from "@shared/schema";
-import { eq } from "drizzle-orm";
 
 export interface IStorage {
   createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
@@ -16,34 +12,38 @@ export interface IStorage {
   createProject(project: InsertProject): Promise<Project>;
 }
 
-export class DatabaseStorage implements IStorage {
+export class MemoryStorage implements IStorage {
+  private inquiries: Inquiry[] = [];
+  private projects: Project[] = [];
+  private nextId = 1;
+
   async createInquiry(insertInquiry: InsertInquiry): Promise<Inquiry> {
-    const [inquiry] = await db
-      .insert(inquiries)
-      .values(insertInquiry)
-      .returning();
+    const inquiry: Inquiry = {
+      id: this.nextId++,
+      ...insertInquiry,
+      createdAt: new Date()
+    };
+    this.inquiries.push(inquiry);
     return inquiry;
   }
 
   async getProjects(): Promise<Project[]> {
-    return await db.select().from(projects);
+    return this.projects;
   }
 
   async getProject(id: number): Promise<Project | undefined> {
-    const [project] = await db
-      .select()
-      .from(projects)
-      .where(eq(projects.id, id));
-    return project;
+    return this.projects.find(p => p.id === id);
   }
 
   async createProject(insertProject: InsertProject): Promise<Project> {
-    const [project] = await db
-      .insert(projects)
-      .values(insertProject)
-      .returning();
+    const project: Project = {
+      id: this.nextId++,
+      ...insertProject,
+      videoUrl: insertProject.videoUrl || null
+    };
+    this.projects.push(project);
     return project;
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new MemoryStorage();

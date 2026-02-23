@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Instagram, Music } from "lucide-react";
 
 export function Footer() {
   return (
@@ -26,9 +27,14 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">Connect</h3>
             <nav className="flex flex-col gap-2">
-              <a href="#" className="text-sm text-white/60 hover:text-white transition-colors">Instagram</a>
-              <a href="#" className="text-sm text-white/60 hover:text-white transition-colors">LinkedIn</a>
-              <a href="#" className="text-sm text-white/60 hover:text-white transition-colors">Vimeo</a>
+              <a href="https://www.instagram.com/estateaerial_co?igsh=ZGpreHoyN3l2NHo%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2">
+                <Instagram size={16} />
+                Instagram
+              </a>
+              <a href="https://www.tiktok.com/@estateaerial_co?_r=1&_t=ZS-94A4s22cnPI" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2">
+                <Music size={16} />
+                TikTok
+              </a>
             </nav>
           </div>
         </div>
@@ -36,7 +42,7 @@ export function Footer() {
         <div className="md:text-right flex flex-col justify-between">
           <div className="space-y-2">
             <p className="text-white/30 font-mono text-[10px] uppercase tracking-widest">Inquiries</p>
-            <a href="mailto:hello@estateaerial.co" className="text-lg hover:text-white/70 transition-colors">hello@estateaerial.co</a>
+            <a href="mailto:murungibrenda1@gmail.com" className="text-lg hover:text-white/70 transition-colors">murungibrenda1@gmail.com</a>
           </div>
         </div>
       </div>

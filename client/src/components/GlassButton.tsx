@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes, forwardRef } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 
-interface GlassButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface GlassButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof MotionProps> {
   variant?: "primary" | "ghost";
+  children: React.ReactNode;
 }
 
 export const GlassButton = forwardRef<HTMLButtonElement, GlassButtonProps>(

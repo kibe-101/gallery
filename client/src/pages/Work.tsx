@@ -16,28 +16,28 @@ export default function Work() {
       title: "Neon Horizon",
       category: "Drone Cinematography",
       description: "Night aerials capturing the pulse of Tokyo.",
-      imageUrl: "https://images.unsplash.com/photo-1542382156909-9ae37b3f56fd?q=80&w=2037&auto=format&fit=crop"
+      imageUrl: "/IMG_1282.PNG"
     },
     {
       id: 2,
       title: "Concrete Dreams",
       category: "Architecture",
       description: "Brutalist structures reimagined through light.",
-      imageUrl: "https://images.unsplash.com/photo-1470723710355-95304d8aece4?q=80&w=2070&auto=format&fit=crop"
+      imageUrl: "/IMG_1283.PNG"
     },
     {
       id: 3,
       title: "Arctic Silence",
       category: "360° Experience",
       description: "VR journey through Icelandic glaciers.",
-      imageUrl: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=2159&auto=format&fit=crop"
+      imageUrl: "/IMG_0896.PNG"
     },
     {
       id: 4,
       title: "Vertical Forest",
       category: "Photography",
       description: "Documenting sustainable high-rise living.",
-      imageUrl: "https://images.unsplash.com/photo-1479839672679-a455b180eda7?q=80&w=1964&auto=format&fit=crop"
+      imageUrl: "/IMG_1281.PNG"
     }
   ];
 
